@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Rota 66 | Estilo & Tradição</title>
+    <style>
+        /* CSS - ESTILIZAÇÃO */
+        :root {
+            --primary: #d4af37; /* Dourado */
+            --dark: #121212;
+            --light: #f4f4f4;
+            --gray: #2c2c2c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        /* Header e Navegação */
+        header {
+            background: rgba(18, 18, 18, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .logo h1 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1470') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn-agendar {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-agendar:hover {
+            background-color: #b8962d;
+            transform: scale(1.05);
+        }
+
+        /* Serviços */
+        .servicos {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .servicos h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--gray);
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.4s;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid var(--gray);
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplicidade para o exemplo */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>BARBER<span>SHOP</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Estilo é questão de honra</h2>
+        <p>Mais que um corte de cabelo, uma experiência clássica para o homem moderno.</p>
+        <button class="btn-agendar" onclick="agendar()">Agende seu horário</button>
+    </section>
+
+    <section class="servicos" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="grid-servicos">
+            <div class="card">
+                <h3>Corte Clássico</h3>
+                <p>O corte tradicional feito na tesoura ou máquina.</p>
+                <p style="color: var(--primary); margin-top: 10px; font-weight: bold;">R$ 45,00</p>
+            </div>
+            <div class="card">
+                <h3>Barba de Toalha Quente</h3>
+                <p>Barbear relaxante com hidratação e toalha quente.</p>
+                <p style="color: var(--primary); margin-top: 10px; font-weight: bold;">R$ 35,00</p>
+            </div>
+            <div class="card">
+                <h3>Combo Imperial</h3>
+                <p>Cabelo, barba e sobrancelha com massagem facial.</p>
+                <p style="color: var(--primary); margin-top: 10px; font-weight: bold;">R$ 75,00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="social-icons">
+            <a href="#">Instagram</a> | <a href="#">WhatsApp</a> | <a href="#">Facebook</a>
+        </div>
+        <p>&copy; 2024 Barbearia Rota 66. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function agendar() {
+            const mensagem = "Olá! Gostaria de agendar um horário.";
+            // Simula o redirecionamento para o WhatsApp
+            const confirmacao = confirm("Deseja abrir o WhatsApp para agendar?");
+            if(confirmacao) {
+                window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(mensagem)}`, '_blank');
+            }
+        }
+
+        // Efeito de mudar o fundo do header ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = '#000';
+                header.style.padding = '0.5rem 5%';
+            } else {
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
+                header.style.padding = '1rem 5%';
+            }
+        });
+    </script>
+</body>
+</html>
